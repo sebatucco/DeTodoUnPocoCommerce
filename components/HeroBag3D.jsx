@@ -37,17 +37,6 @@ export default function HeroBag3D() {
           />
         </div>
       </motion.div>
-
-      <motion.div
-        className="absolute left-6 top-14 h-16 w-16 rounded-full bg-[#32b9b3]/20 blur-md"
-        animate={{ y: [0, -12, 0], x: [0, 8, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute bottom-16 right-8 h-20 w-20 rounded-full bg-[#ef7c72]/20 blur-md"
-        animate={{ y: [0, 10, 0], x: [0, -10, 0] }}
-        transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
-      />
     </div>
   )
 }
