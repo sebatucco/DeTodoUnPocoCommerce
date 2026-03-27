@@ -25,7 +25,7 @@ export default function HeroBag3D() {
       >
         <div className="mx-auto h-[420px] w-full max-w-[520px]">
           <model-viewer
-            src="/models/logo.glb"
+            src="/logo.glb"
             alt="Modelo 3D principal"
             auto-rotate
             camera-controls
