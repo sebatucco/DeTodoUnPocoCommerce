@@ -5,7 +5,7 @@ export default function Logo({ href = '/', compact = false }) {
   return (
     <Link href={href} className="flex items-center gap-3">
       <img
-        src="/logo-detodounpoco.jpg"
+        src="/LogoSinFondo.png"
         alt={siteConfig.brandName}
         className={`rounded-2xl object-cover shadow-sm ring-1 ring-white/20 ${compact ? 'h-12 w-12' : 'h-14 w-14'}`}
       />
