@@ -94,11 +94,10 @@ export default function CatalogClient({ products = [], categories = [] }) {
         <button
           type="button"
           onClick={() => setSelectedCategory('all')}
-          className={`rounded-full border px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] transition ${
-            selectedCategory === 'all'
+          className={`rounded-full border px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] transition ${selectedCategory === 'all'
               ? 'border-[#143047] bg-[#143047] text-white shadow-[0_10px_20px_rgba(20,48,71,0.14)]'
               : 'border-[#d8cdb8] bg-white text-[#143047] hover:border-[#5e89a6]'
-          }`}
+            }`}
         >
           Todas <span className="ml-2 opacity-70">({safeProducts.length})</span>
         </button>
@@ -108,13 +107,12 @@ export default function CatalogClient({ products = [], categories = [] }) {
             key={category.slug}
             type="button"
             onClick={() => setSelectedCategory(category.slug)}
-            className={`rounded-full border px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] transition ${
-              selectedCategory === category.slug
+            className={`rounded-full border px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] transition ${selectedCategory === category.slug
                 ? 'border-[#ef7d6b] bg-[#ef7d6b] text-white shadow-[0_10px_20px_rgba(239,125,107,0.22)]'
                 : 'border-[#d8cdb8] bg-white text-[#143047] hover:border-[#5e89a6]'
-            }`}
+              }`}
           >
-            {category.name} <span className="ml-2 opacity-70">({category.count})</span>
+            {category.name} <span className="ml-2 opacity-70"> - {category.count}</span>
           </button>
         ))}
       </div>
