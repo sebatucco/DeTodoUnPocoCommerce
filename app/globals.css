@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 46% 93%;
+    --foreground: 206 56% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 206 56% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 206 56% 18%;
+    --primary: 206 56% 18%;
+    --primary-foreground: 42 46% 93%;
+    --secondary: 205 35% 57%;
+    --secondary-foreground: 42 46% 93%;
+    --muted: 42 28% 89%;
+    --muted-foreground: 206 21% 35%;
+    --accent: 10 80% 67%;
+    --accent-foreground: 206 56% 18%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 205 24% 80%;
+    --input: 205 24% 80%;
+    --ring: 206 56% 18%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Manrope', system-ui, sans-serif;
+    background-image:
+      radial-gradient(circle at top left, rgba(98, 149, 180, 0.2), transparent 30%),
+      radial-gradient(circle at top right, rgba(239, 125, 107, 0.15), transparent 20%),
+      linear-gradient(180deg, #f8f3ea 0%, #f5efe3 100%);
+  }
+
+  img {
+    image-rendering: auto;
+  }
+}
+
+.font-display {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2ebdc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8aa9be;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6f93ad;
+}
+
+::selection {
+  background: rgba(239, 125, 107, 0.25);
+  color: #143047;
+}
+
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
