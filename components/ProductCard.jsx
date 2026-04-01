@@ -31,7 +31,7 @@ export default function ProductCard({ product, index = 0 }) {
       viewport={{ once: true }}
       transition={{ delay: index * 0.06, duration: 0.4 }}
     >
-      <Link href={`/producto/${product.id}`}>
+      <Link href={`/producto/${product.slug || product.id}`}>
         <div className="group overflow-hidden rounded-[28px] border border-[#d8cdb8] bg-white shadow-[0_14px_35px_rgba(20,48,71,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_45px_rgba(20,48,71,0.14)]">
           <div className="relative aspect-square overflow-hidden bg-[#eef4f8]">
             {product.image ? (
