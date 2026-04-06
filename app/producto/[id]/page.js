@@ -27,18 +27,15 @@ export default function ProductPage() {
   useEffect(() => {
     async function fetchProduct() {
       try {
-        const response = await fetch(`/api/products/${params.id}`, { cache: 'no-store' })
+        const response = await fetch(`/api/products/${params.id}`)
         if (response.ok) {
-          const text = await response.text()
-          if (!text) throw new Error('Respuesta vacía en detalle de producto')
-          const data = JSON.parse(text)
+          const data = await response.json()
           setProduct(data)
           if (data.variants?.length) setSelectedVariant(data.variants[0])
 
-          const relatedResponse = await fetch(`/api/products?category=${encodeURIComponent(data.category || '')}`, { cache: 'no-store' })
+          const relatedResponse = await fetch(`/api/products?category=${data.category}`)
           if (relatedResponse.ok) {
-            const relatedText = await relatedResponse.text()
-            const relatedData = relatedText ? JSON.parse(relatedText) : { products: [] }
+            const relatedData = await relatedResponse.json()
             setRelatedProducts((relatedData.products || []).filter((item) => item.id !== data.id).slice(0, 3))
           }
           return
