@@ -100,7 +100,9 @@ function mapProduct(product) {
     category: product.categories?.name || product.category || 'General',
     categorySlug:
       product.categories?.slug ||
-      slugifyCategory(product.categories?.name || product.category || 'General'),
+      slugifyCategory(
+        product.categories?.name || product.category || 'General'
+      ),
     image: firstImage(product),
     images: images.length ? images : [firstImage(product)].filter(Boolean),
     createdAt: product.created_at || null,
